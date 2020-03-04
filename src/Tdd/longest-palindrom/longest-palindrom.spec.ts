@@ -1,4 +1,4 @@
-import { longestPalindrome, isPalindrome } from './longest-palindrom';
+import { longestPalindrome } from './longest-palindrom';
 
 describe('Should return the first longest palindrome', () => {
   test('Should return an empty string', () => {
@@ -11,17 +11,19 @@ describe('Should return the first longest palindrome', () => {
     expect(longestPalindrome(arg)).toEqual(arg);
   });
 
-  test('Should return aba', () => {
+  test('Should return the same str', () => {
     expect(longestPalindrome('aba')).toEqual('aba');
     expect(longestPalindrome('madam')).toEqual('madam');
+    expect(longestPalindrome('abababa')).toEqual('abababa');
   });
 
-  test('Should identify if the word is an palindrome', () => {
-    expect(isPalindrome('a')).toBeTruthy();
-   // expect(isPalindrome('aa')).toBeTruthy()
-  });
-
-  // test('Should return the first palindrome with the same letter', () => {
-  //   expect(longestPalindrome('adddbb')).toEqual('ddd')
-  // })
+  test('Should return the first palindrome with the same letter', () => {
+    expect(longestPalindrome('aabb')).toEqual('aa');
+    expect(longestPalindrome('aaabb')).toEqual('aaa');
+    expect(longestPalindrome('bbaaa')).toEqual('aaa');
+    expect(longestPalindrome('bbaaadddd')).toEqual('dddd');
+    expect(longestPalindrome('ttaaftffftfaafatfz')).toEqual('aaftffftfaa');
+  })
 });
+
+
